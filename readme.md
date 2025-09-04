@@ -356,3 +356,82 @@ select * from students
 select * from students
  where last_name ILike '%n';
 ```
+## 45-8 NOT & Scalar Functions
+
+### NOT operator - ist a operator for negation 
+- select the students who are not from bangladesh 
+```sql
+select * from students 
+where country != 'Bangladesh';
+```
+
+- doing the same using NOT 
+
+```sql 
+select * from students 
+where NOT country = 'Bangladesh';
+```
+- select students whose grade is not A 
+
+```sql 
+select * from students 
+where NOT grade = 'A';
+
+```
+### Functions 
+#### Types of functions 
+##### Scaler (`upper, lower, concat, length`)
+
+- give me first_name in uppercase 
+
+```sql 
+select upper(first_name) from students;
+```
+
+![alt text](image-3.png)
+
+- when we write the command it will go to the table and targeted column and run for each row it will run. This is scaler function. we will get one value for one row.. That means it will run for each row and give value. 
+
+```sql 
+select lower(first_name) from students;
+```
+
+```sql 
+SELECT CONCAT(first_name, ' ', last_name) AS "Full Name" FROM students;
+
+```
+
+```sql 
+SELECT length(first_name) as "first_name_length" FROM students;
+```
+```sql 
+SELECT length(first_name) as "first_name_length" FROM students order by first_name_length asc;
+```
+
+##### Aggregate (`avg, max, min, sum, count`)
+
+![alt text](image-4.png)
+
+- aggregate will take all the values and give summarized data after processing. wil run for each row and will give us result
+- aggregate function runs against whole table 
+
+```sql 
+select avg(age) as avg_age from students;
+```
+```sql 
+select sum(age) from students;
+```
+```sql 
+select count(first_name) from students;
+```
+```sql 
+select count(*) from students;
+```
+
+```sql 
+select max(age) as max_age from students;
+```
+
+```sql 
+select min(age) as min_age from students;
+```
