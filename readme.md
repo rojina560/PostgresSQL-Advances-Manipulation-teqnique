@@ -241,3 +241,26 @@ select * from students
 select * from students
   where blood_group = 'A+'
 ```
+## 45-5 Filtering with AND & OR
+
+### SELECT WITH OR OPERATOR 
+
+- Select students from the USA or bangladesh 
+
+```sql
+  select * from students
+    where country = 'USA' or country = 'Bangladesh';
+```
+- select students with a grade A or B  in Physics or CS 
+
+```sql 
+select * from students 
+  where (grade = 'A' or grade = 'B') and (course = 'CS' or course ='Physics');
+```
+
+- select students from USA and Bangladesh and the age is 20 
+
+```sql
+select * from students 
+  where (country = 'USA' or country = 'Bangladesh') and age =21;
+```
