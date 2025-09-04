@@ -264,3 +264,52 @@ select * from students
 select * from students 
   where (country = 'USA' or country = 'Bangladesh') and age =21;
 ```
+
+## 45-6 Comparison, BETWEEN & IN
+### SELECT with condition operator 
+
+- find those students whose age is higher than equal 22
+
+```sql
+select * from students 
+  where age >= 22;
+```
+- find the students who are not from USA
+
+```sql 
+select * from students 
+  where country != 'USA';
+```
+```sql 
+select * from students 
+  where country <> 'USA';
+```
+
+### SELECT with BETWEEN OPERATOR
+
+- select students whose age is between 20 and 22
+
+```sql 
+select * from students 
+where age between 20 and 22;
+```
+### SELECT with IN OPERATOR
+- select students from bangladesh, india, Spain 
+
+```sql 
+select * from students 
+where country ='Bangladesh' or country ='USA' or country='Spain';
+```
+
+```sql
+select * from students 
+where country IN ('Bangladesh','USA','Spain');
+```
+- both are same and second one is shortcut 
+
+- select students enrolled in 'Physics', 'CS', 'Biology'
+
+```sql 
+select * from students 
+  where course in ('Physics', 'CS', 'Biology');
+```
