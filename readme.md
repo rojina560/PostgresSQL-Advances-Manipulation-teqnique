@@ -196,4 +196,48 @@ select first_name as "First Name", age as "User Age" from students;
 
 ```sql 
 select first_name, blood_group, country, age from students;
-``
+```
+##  45-4 DISTINCT & WHERE Filtering
+
+### SELECT WITH DISTINCT 
+
+```SQL 
+select  country from students;
+```
+- distinct i mean the unique country i want 
+
+```sql
+
+select distinct country from students;
+
+```
+
+```sql
+select distinct course from students;
+```
+
+### WHERE FILTERING 
+- select the students only from USA only 
+```sql
+select * from students 
+  where country = 'USA';
+```
+
+```sql 
+select first_name, age, course, country from students 
+  where country = 'USA';
+```
+
+- select students who have got A  grade 
+
+```sql
+select * from students 
+  where grade = 'A';
+```
+
+- where blood group is A+
+
+```sql 
+select * from students
+  where blood_group = 'A+'
+```
