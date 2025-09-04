@@ -313,3 +313,46 @@ where country IN ('Bangladesh','USA','Spain');
 select * from students 
   where course in ('Physics', 'CS', 'Biology');
 ```
+
+## 45-7 LIKE vs ILIKE
+
+### LIKE 
+- its used like search. Its like we do not know the exact value but we know the pattern 
+- select students whose first name starts with A
+
+```sql 
+select * from students 
+where first_name like 'A%'; -- here % means after A there might many value exists
+```
+```sql 
+select * from students 
+where first_name like '%A'; -- here % means before A there might many value exists
+```
+
+- find students where name starts with A and only 3 letter can exists after A
+
+```sql 
+select * from students 
+where first_name like 'A___'; -- 3 _ _ _ means after A there will be 3 letter after A 
+```
+```sql 
+select * from students 
+where first_name like '%a_'; -- This means last letter will be a and after a there will be another letter 
+```
+
+#### `LIKE OPERATORIS CASE SENSITIVE`
+
+
+## ILIKE operator - which is case insensitive
+
+```sql
+select * from students
+ where email ILike 'A%'
+```
+
+- select students whose last name ends with n 
+
+```sql 
+select * from students
+ where last_name ILike '%n';
+```
